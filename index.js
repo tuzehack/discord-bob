@@ -35,6 +35,11 @@ client.on('message', async message => {
     }
 })
 
+client.on("messageCreate", async (message) => {
+    if (message.content.startsWith("!emitt")) {
+        client.emit("guildMemberAdd", message.member)
+    }
+})
 
 client.login(process.env.token);
 
