@@ -14,7 +14,7 @@ client.on('guildMemberAdd', (member) => {
     const embed = new Discord.MessageEmbed()
     .setColor(`#ff9933`)
     .setTitle(`Bienvenue !`)
-    .setDescription(`Merci de nous avoir rejoint ${member} ! N'hésites pas à te présenter et dire bonjour !`)
+    .setDescription('Merci de nous avoir rejoint' + member.user.tag + ' ! N'hésites pas à te présenter et dire bonjour !')
     .setImage(`https://cdn.discordapp.com/attachments/738474164700053604/902186944803532850/Bienvenue.png`)
 
 welcomeChannel.send({ embeds: [embed] });
