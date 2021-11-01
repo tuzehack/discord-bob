@@ -11,7 +11,7 @@ client.on('ready', () => {
 client.on('guildMemberAdd', (member) => {
     console.log("Ça fonctionne")
     let welcomeChannel = member.guild.channels.cache.get('366705337224527873');
-    welcomeChannel.send(`Bienvenue ${member}!`)
+    welcomeChannel.send(`Bienvenue ${member} !`)
     const embed = new Discord.MessageEmbed()
     .setColor(`#ff9933`)    
     .setDescription(`Merci de nous avoir rejoint ! N'hésites pas à te présenter et dire bonjour !`)
