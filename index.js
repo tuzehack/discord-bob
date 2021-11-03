@@ -11,12 +11,13 @@ client.on('ready', () => {
 client.on('guildMemberAdd', (member) => {
     console.log("Ça fonctionne")
     let welcomeChannel = member.guild.channels.cache.get('366705337224527873');
-    const embed = new Discord.MessageEmbed()
+    const Embed = new Discord.MessageEmbed()
     .setColor(`#ff9933`)    
     .setDescription(`Merci de nous avoir rejoint ! N'hésites pas à te présenter et dire bonjour !`)
     .setImage(`https://cdn.discordapp.com/attachments/738474164700053604/902186944803532850/Bienvenue.png`)
 
-welcomeChannel.send((`Bienvenue ${member}!`) , { embeds: [embed] });
+welcomeChannel.send(`Bienvenue ${member}!`, { 
+    embeds: Embed,
 });
 
 client.on('guildMemberRemove', (member) => {
