@@ -16,8 +16,9 @@ client.on('guildMemberAdd', (member) => {
     .setDescription(`Merci de nous avoir rejoint ! N'hésites pas à te présenter et dire bonjour !`)
     .setImage(`https://cdn.discordapp.com/attachments/738474164700053604/902186944803532850/Bienvenue.png`)
 
-welcomeChannel.send(`Bienvenue ${member}!`, { 
-    embeds: Embed,
+welcomeChannel.send({ 
+    content: `Bienvenue ${member}!`,
+    embeds: [Embed]
 });
 
 client.on('guildMemberRemove', (member) => {
