@@ -11,13 +11,15 @@ client.on('ready', () => {
 client.on('guildMemberAdd', (member) => {
     console.log("Ça fonctionne")
     let welcomeChannel = member.guild.channels.cache.get('366705337224527873');
-    welcomeChannel.send(`Bienvenue ${membre} !`)
-    const embed = new Discord.MessageEmbed()
-    .setTitle(`Bienvenue !`)
-    .setDescription(`Merci de nous avoir rejoint ! Je t'invites à aller lire le <#712767518804279297> pour plus d'informations.`)
-    .setImage(`https://cdn.discordapp.com/attachments/738474164700053604/902186944803532850/Bienvenue.png`)
+    const Embed = new Discord.MessageEmbed()
+        .setColor(`#ff9933`)
+        .setDescription(`Merci de nous avoir rejoint ! N'hésites pas à te présenter et dire bonjour !`)
+        .setImage(`https://cdn.discordapp.com/attachments/738474164700053604/902186944803532850/Bienvenue.png`)
 
-welcomeChannel.send({ embeds: [embed] });
+    welcomeChannel.send({
+        content: `Bienvenue ${member}!`,
+        embeds: [Embed]
+    })
 });
 
 client.on('guildMemberRemove', (member) => {
@@ -25,7 +27,6 @@ client.on('guildMemberRemove', (member) => {
     let leaveChannel = member.guild.channels.cache.get('518730725810372619');
     leaveChannel.send(`Au revoir, ${member} !`);
 });
-
 
 client.on('message', async message => {
     if(message.content.startsWith("bobsay")){
@@ -42,5 +43,4 @@ client.on("messageCreate", async (message) => {
 })
 
 client.login(process.env.token);
-
 
