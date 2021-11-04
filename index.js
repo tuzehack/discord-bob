@@ -29,7 +29,7 @@ client.on('guildMemberRemove', (member) => {
 });
 
 client.on('message', async message => {
-    if(message.content.startsWith("bobsay")){
+    if(message.content.startsWith("dvasay")){
         message.delete()
         let msg = message.content.slice(6)    
         message.channel.send(msg)
